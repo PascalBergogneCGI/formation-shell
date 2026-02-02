@@ -38,3 +38,8 @@ git submodule update --init --recursive
 - `SETUP_PARTICIPANT.md` : préparation autonome
 - `AGENTS.md` : architecture, conventions, règles, workflow
 - `scripts/` : bootstrap, packaging, tagging
+
+
+## Slides (Marp)
+
+Le support de présentation Marp est dans `guide/slides.md`.
