@@ -1,50 +1,47 @@
-# AGENTS - Formation Shell Compass
+# AGENTS - Boussole Formation Shell
 
-This file keeps the repo architecture, conventions, and non-negotiable rules in one place.
+Ce fichier fixe l'architecture, les conventions et les règles non négociables.
 
 ## Architecture
 
-Parent repo (this repo): orchestrates docs and packaging.
-- `guide/` submodule: participant guide
-- `workshop/` submodule: exercises and checks
-- `legacy/`: internal sources only (never distributed)
+Repo parent (ce repo) : orchestration et packaging.
+- `guide/` submodule : supports participants
+- `workshop/` submodule : exercices et checks
+- `legacy/` : sources internes uniquement (jamais distribuées)
 
-## Non-negotiable rules
+## Règles non négociables
 
-- `legacy/` is never required by participants.
-- No participant doc may reference `legacy/`.
-- Participant packaging must exclude `legacy/`.
-- Exercises derived from legacy must be re-written and re-created in `workshop/`.
+- `legacy/` n'est jamais requis par les participants.
+- Aucun document participant ne référence `legacy/`.
+- Le packaging participant exclut `legacy/`.
+- Les exos issus de legacy sont réécrits dans `workshop/`.
 
-## Naming conventions
+## Conventions de nommage
 
-- Steps are `step01` ... `stepNN`
-- Guide steps: `guide/steps/stepXX.md`
-- Workshop steps: `workshop/steps/stepXX/`
+- Steps : `step01` ... `stepNN`
+- Guide : `guide/steps/stepXX.md`
+- Workshop : `workshop/steps/stepXX/`
 
-## Definition of Done (a step)
+## Definition of Done (un step)
 
-A step is done when it has:
-- Guide content (theory + examples + pitfalls + takeaway)
-- Workshop exercise with objective, instructions, success criteria, timebox
-- A runnable `checks/check.sh`
-- A correction in `solutions/` or `instructor_solutions/`
-- A short self-check or mini-quiz
+Un step est "done" s'il a :
+- Contenu guide (théorie + exemples + pièges + à retenir)
+- Exercice workshop (objectif, consignes, critères, temps)
+- `checks/check.sh` exécutable
+- Correction dans `solutions/` ou `instructor_solutions/`
+- Mini-quiz ou auto-check rapide
 
-## Submodule workflow
+## Workflow submodules
 
-1) Commit and push changes in `guide/`
-2) Commit and push changes in `workshop/`
-3) Update parent submodule pointers
-4) Commit parent changes
-5) Tag the parent with `stepXX` if needed
+1) Commit/push dans `guide/`
+2) Commit/push dans `workshop/`
+3) Bump submodules dans le parent
+4) Commit parent
+5) Tag `stepXX` si besoin
 
-## Tagging strategy (parent only)
-
-Example commands:
+## Stratégie de tags (parent)
 
 ```bash
-# After updating submodules
 cd /path/to/formation-shell
 
 git add guide workshop
@@ -55,8 +52,7 @@ git tag -a step03 -m "step03 complete"
 git push --tags
 ```
 
+## Règles de packaging
 
-## Packaging rules
-
-- `scripts/package_participant.sh` must exclude `legacy/`.
-- Solutions are excluded by default; use `--with-solutions` to include them.
+- `scripts/package_participant.sh` exclut `legacy/`.
+- Les solutions sont exclues par défaut ; `--with-solutions` pour inclure.

@@ -1,20 +1,20 @@
-# Participant Setup (self-serve)
+# Préparation Participant (autonome)
 
-This guide prepares you for the training without an instructor.
+Ce guide permet de se préparer sans animateur.
 
-## 1) Get the repositories
+## 1) Récupérer les repos
 
-Option A: you receive a participant package zip.
-- Unzip it into a working folder.
+Option A : vous recevez un zip participant.
+- Dézippez dans un dossier de travail.
 
-Option B: clone the two repos directly:
+Option B : cloner les deux repos :
 
 ```bash
 git clone <GUIDE_REPO_URL>
 git clone <WORKSHOP_REPO_URL>
 ```
 
-## 2) Verify your environment
+## 2) Vérifier l'environnement
 
 ```bash
 bash --version
@@ -26,14 +26,14 @@ which sed
 which grep
 ```
 
-## 3) Open the materials
+## 3) Ouvrir les supports
 
-- Read `guide/README.md`
-- Follow the steps in `guide/steps/`
-- Do exercises in `workshop/steps/`
+- Lire `guide/README.md`
+- Suivre `guide/steps/`
+- Faire les exercices `workshop/steps/`
 
-## Troubleshooting
+## Dépannage
 
-- "command not found": install the tool or check your PATH
-- Permission denied: add execute right with `chmod +x <script>`
-- If a check fails, open the step README and re-read the criteria
+- "command not found" : vérifier PATH ou installer l'outil
+- "permission denied" : `chmod +x <script>`
+- Si un check échoue, relire les critères

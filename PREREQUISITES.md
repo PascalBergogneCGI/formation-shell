@@ -1,13 +1,11 @@
-# Prerequisites
+# Prérequis
 
-## Technical requirements
-- Linux or macOS terminal with bash
-- Git (for cloning)
-- Basic command line access (user permissions)
+## Pré-requis techniques
+- Terminal Linux ou macOS avec bash
+- Git
+- Accès à un shell utilisateur
 
-## Quick checks
-
-Run these in a terminal:
+## Checks rapides
 
 ```bash
 bash --version
@@ -21,4 +19,4 @@ awk 'BEGIN {print 1+1}'
 find . -maxdepth 1 -type d > /dev/null
 ```
 
-If any command fails, install the missing tool or ask the facilitator.
+Si une commande échoue, installez l'outil manquant ou demandez à l'animateur.

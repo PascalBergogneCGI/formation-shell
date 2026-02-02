@@ -1,206 +1,198 @@
-# Instructor Guide - Formation Shell (6h)
+# Guide Animateur - Formation Shell (6h)
 
-Date: use your local calendar. Total face-to-face time: 6h.
+Date : utilisez votre calendrier. Temps en face-à-face : 6h.
 
-## Daily plan (fixed timeboxes)
+## Planning de la journée (timeboxes fixes)
 
-Morning (3h30) 09:00-12:30
-- 09:00-09:10 Welcome, objectives, logistics
-- 09:10-09:25 Roundtable (name, context, personal objective)
-- 09:25-09:35 Icebreaker (Terminal Bingo or favorite/most-hated command)
-- 09:35-09:50 How the day works: sprint cadence, repos, rules, Definition of Done
-- 09:50-10:00 Vi crash course (minimal): i / Esc / :wq / :q! / / / ? / dd / yy / p / u
+Matin (3h30) 09:00-12:30
+- 09:00-09:10 Accueil, objectifs, logistique
+- 09:10-09:25 Tour de table (prénom, contexte, objectif perso)
+- 09:25-09:35 Icebreaker (Terminal Bingo ou commande préférée/haïe)
+- 09:35-09:50 Comment la journée fonctionne : cadence en sprints, repos, règles, Definition of Done
+- 09:50-10:00 Crash course vi (minimum vital) : i / Esc / :wq / :q! / / / ? / dd / yy / p / u
 
 Sprints
-- Sprint 1 (10:00-10:45) Navigation, files, man/help (step01)
-- Break (10:45-10:55)
+- Sprint 1 (10:00-10:45) Navigation, fichiers, man/help (step01)
+- Pause (10:45-10:55)
 - Sprint 2 (10:55-11:45) Redirections, pipes, grep, head/tail, sort/uniq (step02)
-- Sprint 3 (11:45-12:25) find, globbing/quoting, env vars (step03)
-- 12:25-12:30 Mini-retro + parking lot
+- Sprint 3 (11:45-12:25) find, globbing/quoting, variables d'environnement (step03)
+- 12:25-12:30 Mini-rétro + parking lot
 
-Lunch (off-clock) 12:30-13:30
+Déjeuner (hors 6h) 12:30-13:30
 
-Afternoon (2h30) 13:30-16:00
-- Sprint 4 (13:30-14:20) Bash scripting basics (step04)
-- Break (14:20-14:30)
-- Sprint 5 (14:30-15:20) Loops/conditions/functions + legacy 02-for-loop rework (step05)
-- Sprint 6 (15:20-15:50) Interactive script + legacy 01-add_interactive rework (step06)
-- 15:50-16:00 Final quiz + wrap-up + next steps
+Après-midi (2h30) 13:30-16:00
+- Sprint 4 (13:30-14:20) Bases du scripting bash (step04)
+- Pause (14:20-14:30)
+- Sprint 5 (14:30-15:20) Boucles/conditions/fonctions + reprise legacy 02-for-loop (step05)
+- Sprint 6 (15:20-15:50) Script interactif + reprise legacy 01-add_interactive (step06)
+- 15:50-16:00 Quiz final + wrap-up + prochaines étapes
 
-## Sprint cadence (repeatable)
+## Cadence d'un sprint
 
-Each sprint = goal + demo + practice + correction + check + mini-retro.
-- Goal (2 min): clear objective for the sprint
-- Demo (5-10 min): facilitator shows 1-2 key commands or patterns
-- Practice (20-35 min): participants complete the step
-- Correction (10-15 min): walk through solution and common errors
-- Check (2-5 min): run provided check script
-- Mini-retro (2-3 min): quick feedback, what to park for later
+Chaque sprint = objectif + démo + pratique + correction + check + mini-rétro.
+- Objectif (2 min) : but clair
+- Démo (5-10 min) : 1-2 commandes ou patterns clés
+- Pratique (20-35 min) : exercices
+- Correction (10-15 min) : correction + erreurs typiques
+- Check (2-5 min) : exécuter le script de validation
+- Mini-rétro (2-3 min) : feedback rapide
 
-## Material checklist
+## Checklist matériel
 
-- Projector + HDMI/USB-C adapter
-- Whiteboard or shared notes (parking lot)
-- Stable Wi-Fi (optional, no external dependencies required)
-- Local terminal for facilitator with bash
-- Zip tools installed (for packaging)
+- Projecteur + adaptateur HDMI/USB-C
+- Tableau ou notes partagées (parking lot)
+- Wi-Fi stable (optionnel)
+- Terminal local bash pour l'animateur
+- Outil zip disponible (packaging)
 
-## Pre-session checklist
+## Checklist avant session
 
 - `git submodule update --init --recursive`
-- Run `./scripts/bootstrap.sh`
-- Open `guide/steps/` and `workshop/steps/` in editor
-- Prepare sample demo files (use `workshop/steps/step01/starter`)
-- Verify checks run for step01 and step02
+- Exécuter `./scripts/bootstrap.sh`
+- Ouvrir `guide/steps/` et `workshop/steps/`
+- Préparer quelques fichiers de démo
+- Vérifier les checks step01 et step02
 
-## Plan B (issues)
+## Plan B (problèmes)
 
-- No network: training still works, no external dependency.
-- Rights problems on machines: run from user home, avoid system folders.
-- Missing `zip`: use `tar` fallback in `package_participant.sh`.
-- Mixed skill levels: pair strong with less confident; offer fast-track variants.
+- Pas de réseau : OK, pas de dépendance externe.
+- Problèmes de droits : travailler dans le home.
+- Pas de `zip` : le script génère un tar.gz.
+- Niveaux hétérogènes : binômes + variantes rapides.
 
-## Sprint runbooks
+## Runbooks de sprint
 
-### Sprint 1 (10:00-10:45) - Navigation, files, man/help (step01)
+### Sprint 1 (10:00-10:45) - Navigation, fichiers, man/help (step01)
 
-Objectives
-- Navigate with `pwd`, `ls`, `cd`
-- Understand relative vs absolute paths
-- Use `man` and `--help`
+Objectifs
+- Naviguer avec `pwd`, `ls`, `cd`
+- Comprendre chemins relatifs/absolus
+- Utiliser `man` et `--help`
 
-Demo (5-10 min)
+Démo
 - `pwd`, `ls -la`, `cd ..`, `cd -`
 - `man ls`, `ls --help`, `man man`
 
-Instructions
-- Open `workshop/steps/step01/README.md`
-- Work in the provided `starter/maze` tree
-- Write `answers.txt` as instructed
+Consignes
+- Ouvrir `workshop/steps/step01/README.md`
+- Travailler dans `starter/maze`
+- Écrire `answers.txt` selon l'énoncé
 
-Watch points / typical errors
-- Confusion between relative and absolute paths
-- Forgetting quotes around paths with spaces
+Erreurs typiques
+- Confusion chemins relatifs/absolus
+- Oubli des guillemets sur chemins avec espaces
 
-Useful phrases
-- "If you are lost, run `pwd` and go up one level with `cd ..`."
-- "Use `man` as a habit; it is your local search engine."
+Phrases utiles
+- "Si vous êtes perdu, faites `pwd` puis `cd ..`."
+- "Le `man` est votre moteur de recherche local."
 
-If group is fast
-- Add `tree`-like listing using `find` + `sed`
-- Ask them to explain the output of `ls -la`
+Variantes rapides
+- Reproduire `tree` avec `find` + `sed`
 
-If group is slow
-- Pair participants
-- Provide the exact path to the clue file
+Variantes lentes
+- Donner le chemin exact du fichier indice
 
-### Sprint 2 (10:55-11:45) - Redirections, pipes, filters (step02)
+### Sprint 2 (10:55-11:45) - Redirections, pipes, filtres (step02)
 
-Objectives
-- Use `>`, `>>`, `2>`, `2>&1`
-- Build pipelines with `|`
-- Filter with `grep`, `cut`, `sort`, `uniq`, `head`, `tail`
+Objectifs
+- `>`, `>>`, `2>`, `2>&1`
+- Pipelines `|`
+- `grep`, `cut`, `sort`, `uniq`, `head`, `tail`
 
-Demo
-- `cat file | grep "ERROR" | cut -d' ' -f2 | sort | uniq -c`
-- Redirect output to file
+Démo
+- `cat file | grep ERROR | cut -d' ' -f3 | sort | uniq -c`
+- Rediriger sortie vers fichier
 
-Instructions
-- Use the provided `starter/log.txt`
-- Produce `filtered.txt` per criteria
-- Run `checks/check.sh`
+Consignes
+- Utiliser `starter/log.txt`
+- Produire `filtered.txt`
+- Lancer `checks/check.sh`
 
-Typical errors
-- Confusing stdout vs stderr
-- Using `uniq` without `sort`
-
-Useful phrases
-- "Build your pipeline step by step and echo intermediate results."
-
-Variations
-- Add `tee` to show and save
+Erreurs typiques
+- Confusion stdout/stderr
+- `uniq` sans `sort`
 
 ### Sprint 3 (11:45-12:25) - find, globbing, quoting, env (step03)
 
-Objectives
-- Use `find` and simple predicates
-- Handle spaces with quoting
-- Read and set env vars
+Objectifs
+- `find` et prédicats
+- Quoting sûr
+- Variables d'environnement
 
-Demo
+Démo
 - `find . -type f -name "*.cfg"`
 - `export PROJECT_NAME="alpha"`
 - `echo "$PATH"`
 
-Instructions
-- Use the `starter/files` tree
-- Create `found.txt` and `env.txt`
+Consignes
+- Utiliser `starter/files`
+- Créer `found.txt` et `env.txt`
 
-Typical errors
-- Unquoted paths
-- Using single quotes when expansion is needed
+Erreurs typiques
+- Chemins non quotés
+- Mauvais usage des quotes
 
-### Sprint 4 (13:30-14:20) - Scripting basics (step04)
+### Sprint 4 (13:30-14:20) - Scripting (step04)
 
-Objectives
-- Shebang, variables, positional params
-- Exit codes, `test` / `[ ]`, simple `if`
+Objectifs
+- Shebang, variables, paramètres
+- Exit codes, `test` / `[ ]`, `if`
 
-Demo
-- Minimal script + `chmod +x`
+Démo
+- Script minimal + `chmod +x`
 - `if [ -z "$1" ]; then ... fi`
 
-Instructions
-- Write `greet.sh` and `check_env.sh`
-- Run checks
+Consignes
+- Écrire `greet.sh` et `check_env.sh`
+- Lancer les checks
 
-### Sprint 5 (14:30-15:20) - Loops/conditions/functions (step05)
+### Sprint 5 (14:30-15:20) - Boucles/conditions/fonctions (step05)
 
-Objectives
-- Use `for` and `while`
-- Use `case`
-- Refactor legacy loop script
+Objectifs
+- `for`, `while`
+- `case`
+- Refactor d'un script
 
-Demo
+Démo
 - `for f in *.txt; do ...; done`
-- `case "$1" in ...)` usage
+- `case "$1" in ...)`
 
-Instructions
-- Complete `cmp_dir.sh` based on starter
-- Run checks
+Consignes
+- Compléter `cmp_dir.sh`
+- Lancer les checks
 
-Typical errors
-- Missing quotes around variables
-- Using `for f in $(ls ...)` instead of globbing
+Erreurs typiques
+- Variables non quotées
+- `for f in $(ls ...)` au lieu du glob
 
-### Sprint 6 (15:20-15:50) - Interactive script (step06)
+### Sprint 6 (15:20-15:50) - Script interactif (step06)
 
-Objectives
-- `read`, validation, simple menu flow
-- Integrate command-line flags
+Objectifs
+- `read`, validation, menu simple
+- Intégrer flags CLI
 
-Demo
+Démo
 - `read -r input`
-- `-i/--interactive` style flag
+- `-i/--interactive`
 
-Instructions
-- Complete `system_page.sh`
-- Run checks (non-interactive + interactive via input pipe)
+Consignes
+- Compléter `system_page.sh`
+- Lancer les checks (mode interactif via input pipe)
 
-Typical errors
-- Blocking reads (no stdin)
-- Writing output to wrong file
+Erreurs typiques
+- `read` bloquant sans stdin
+- Écriture dans le mauvais fichier
 
-## Final quiz + wrap-up (15:50-16:00)
+## Quiz final + wrap-up (15:50-16:00)
 
-- Run `guide/quizzes/final_quiz.md`
-- Collect 1 key takeaway per participant
-- Share next steps: daily CLI practice, build a useful script
+- `guide/quizzes/final_quiz.md`
+- 1 takeaway par participant
+- Prochaines étapes : pratique quotidienne, script utile
 
-## Definition of Done (per step)
+## Definition of Done (par step)
 
-- Guide read
-- Exercise completed
-- Check script passes
-- Quick self-explanation of what was learned
-- 1-minute mini retro
+- Guide lu
+- Exercice terminé
+- Check OK
+- Explication rapide de l'apprentissage
+- Mini-rétro

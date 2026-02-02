@@ -10,4 +10,4 @@ TAG="$1"
 
 git tag -a "$TAG" -m "$TAG complete"
 
-echo "Tagged: $TAG"
+echo "Tag créé: $TAG"

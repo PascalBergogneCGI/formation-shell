@@ -1,40 +1,40 @@
-# Formation Shell (parent repo)
+# Formation Shell (repo parent)
 
-This parent repo orchestrates the training content and the facilitator runbook. It includes two submodules:
+Ce repo parent orchestre les contenus et le runbook animateur. Il inclut deux submodules :
 
-- `guide/` (participant guide and theory)
-- `workshop/` (hands-on exercises, checks, solutions)
+- `guide/` (supports participants et théorie)
+- `workshop/` (exercices, checks, solutions)
 
-The `legacy/` folder contains source materials used only to write the training. Participants must never need it, and participant packaging must exclude it.
+Le dossier `legacy/` contient des sources internes utilisées uniquement pour rédiger la formation. Les participants ne doivent jamais en dépendre, et le packaging participant doit l'exclure.
 
-## Clone with submodules
+## Cloner avec submodules
 
 ```bash
 git clone --recurse-submodules <REPO_URL>
 ```
 
-If already cloned:
+Si déjà cloné :
 
 ```bash
 git submodule update --init --recursive
 ```
 
-## Distribution modes
+## Modes de distribution
 
-1) Participants clone only the content they need:
+1) Les participants clonent uniquement ce dont ils ont besoin :
 - `guide/`
 - `workshop/`
 
-2) Package a participant zip from this parent repo (excludes `legacy/` and optionally excludes `solutions/`):
+2) Packaging participant depuis ce repo parent (exclut `legacy/` et peut exclure `solutions/`) :
 
 ```bash
 ./scripts/package_participant.sh
 ```
 
-## Repo layout
+## Structure
 
-- `INSTRUCTOR_GUIDE.md`: facilitator runbook (minute-by-minute)
-- `PREREQUISITES.md`: requirements and quick checks
-- `SETUP_PARTICIPANT.md`: self-serve setup guide
-- `AGENTS.md`: architecture, conventions, rules, and workflow
-- `scripts/`: bootstrap, packaging, and optional tagging helpers
+- `INSTRUCTOR_GUIDE.md` : runbook animateur (minute par minute)
+- `PREREQUISITES.md` : prérequis et checks rapides
+- `SETUP_PARTICIPANT.md` : préparation autonome
+- `AGENTS.md` : architecture, conventions, règles, workflow
+- `scripts/` : bootstrap, packaging, tagging
