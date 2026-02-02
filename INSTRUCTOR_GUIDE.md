@@ -196,3 +196,15 @@ Erreurs typiques
 - Check OK
 - Explication rapide de l'apprentissage
 - Mini-rétro
+
+
+## Fil conducteur (script de monitoring VM)
+
+Tout au long de la journée, les steps construisent un script unique de monitoring de VM.
+Le script final sera en bash (pas de HTML) et intégrera :
+- collecte d'infos (uptime, load, disque, mémoire)
+- parsing avec awk
+- boucles, conditions, fonctions
+- menu interactif
+
+Chaque step ajoute une brique, puis le projet final assemble tout.
