@@ -1,0 +1,6 @@
+[submodule "workshop"]
+	path = workshop
+	url = https://github.com/PascalBergogneCGI/formation-shell-workshop.git
+[submodule "guide"]
+	path = guide
+	url = https://github.com/PascalBergogneCGI/formation-shell-guide.git
