@@ -2,5 +2,11 @@
   "name": "cgichaos-devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "onCreateCommand": "git submodule update --init --recursive",
-  "postCreateCommand": "code-server --install-extension yzhang.markdown-all-in-one || true"
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  }
 }
