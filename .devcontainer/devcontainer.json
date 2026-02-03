@@ -1,0 +1,14 @@
+{
+  "name": "cgichaos-devcontainer",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "yzhang.markdown-all-in-one"
+      ]
+    }
+  },
+
+  "postCreateCommand": "git submodule update --init --recursive"
+}
