@@ -1,0 +1,37 @@
+
+
+pointer les submodule sut un commit d'init pour le workshop`
+bien nommer les tags ato2
+voir qd les participants prenne l'env en main ( mot de passe complexe ) 
+ajouteer l'url coder ( ou l'envoyer avec les passe )
+
+revoir bien l'orga avec les chapitre et le timing et les pauses 
+
+formation basé sur l'experiece du terrain 
+
+etape 00 : un jeu de tests pour les commandes de la artie 1 , avec le treasure a trouvé ca c'est cool puis des log a parser 
+
+pour le monitor : ajouter des sueil pour gérer des alertes -> faire un jeu de tests avec plein de petit fichiers : si > 10 fichier générer une alertes 
+
+proposer des idée pour les boucle , les candidat choisissent la boucle qu'ils veulent faire 
+
+si besoin : dans chaque step crée un pti env de prod fictif en lancant un script 
+
+lsof aller choper les fichier utiliser, les fichier de conf ( ps ... ) 
+process zombie 
+
+proposer une structure de fichier shell script ( usage, doc, fonction , menu ? ) 
+
+pour le awk : dire que fait ce script ? au lieu de dire ce que c'est 
+
+
+ajouter la solution du step précedent dans le step actif 
+nommage : 
+
+dans workshop : 3 dossier : 01-basics 02-workshop-monitor 03-advanced
+
+supprimer les solutions du guide 
+
+prévenir que le fonctionnement des tag : écrase l'existant, n'écrase pas les nouveau fichier script que vous créez 
+
+les nommages de tags : end ou results ou solution stepXX
