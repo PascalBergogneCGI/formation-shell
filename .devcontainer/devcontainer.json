@@ -1,7 +1,15 @@
 {
   "name": "cgichaos-devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "onCreateCommand": "git submodule update --init --recursive",
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "installZsh": true,
+      "username": "coder",
+      "userUid": 1000,
+      "userGid": 1000
+    }
+  },
+  "postCreateCommand": "code-server --list-extensions",
   "customizations": {
     "vscode": {
       "extensions": [
