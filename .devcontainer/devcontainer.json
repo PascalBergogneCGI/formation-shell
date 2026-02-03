@@ -1,14 +1,6 @@
 {
   "name": "cgichaos-devcontainer",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
-  "updateContentCommand": "cd /workspaces/formation-shell && git config --global --add safe.directory '*' && git submodule sync --recursive && git submodule update --init --recursive",
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "yzhang.markdown-all-in-one"
-      ]
-    }
-  },
-
+  "onCreateCommand": "git submodule update --init --recursive",
   "postCreateCommand": "code-server --install-extension yzhang.markdown-all-in-one || true"
 }
